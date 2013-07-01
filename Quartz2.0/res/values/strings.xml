@@ -15,5 +15,16 @@
     <string name="title_activity_new_item">NewItem</string>
     <string name="title_activity_new_category">NewCategory</string>
     <string name="title_activity_new_supplier">NewSupplier</string>
+    <string name="supplier">Supplier</string>
+    <string name="new_supplier">Add Supplier</string>
+    <string name="item">Item</string>
+    <string name="new_item">Add Item</string>
+    <string name="category">Category</string>
+    <string name="save">Save</string>
+    <string name="home">Home</string>
+    <string name="back">Back</string>
+    <string name="quantity_delivered">Quatinty Delivered</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="delivery_note_number">Delivery Note Number</string>
 
 </resources>

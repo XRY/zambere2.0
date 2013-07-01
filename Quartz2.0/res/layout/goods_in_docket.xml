@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true">
+    android:fillViewport="true" >
     
 <LinearLayout
     android:layout_width="match_parent"
@@ -22,13 +22,14 @@
                 android:id="@+id/textView1"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Delivery Note Number" />
+                android:text="@string/delivery_note_number" />
 
             <EditText
                 android:id="@+id/editText1"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
-                android:ems="10" >
+                android:ems="10"
+                android:inputType="text" >
 
                 <requestFocus />
             </EditText>
@@ -44,10 +45,10 @@
                 android:id="@+id/textView2"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Supplier"  />
+                android:text="@string/supplier"  />
 
             <Spinner
-                android:id="@+id/spinner1"
+                android:id="@+id/supplierSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -62,10 +63,10 @@
                 android:id="@+id/textView3"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Category" />
+                android:text="@string/category" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/categorySpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -80,10 +81,10 @@
                 android:id="@+id/textView4"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Item" />
+                android:text="@string/item" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/itemSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -98,7 +99,7 @@
                android:id="@+id/textView5"
                android:layout_width="100dp"
                android:layout_height="wrap_content"
-               android:text="Quantity" />
+               android:text="@string/quantity_delivered" />
 
            <EditText
                android:id="@+id/editText2"
@@ -118,7 +119,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Date" />
+                android:text="@string/expiry_date" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -148,7 +149,7 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/save" />
 
     <ListView
         android:id="@+id/listView1"
