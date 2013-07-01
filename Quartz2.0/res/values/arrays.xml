@@ -1,0 +1,14 @@
+
+    <resources>
+        <string-array name="inventoryArray">
+            <item >Goods In Docket</item>
+            <item >Internal Requisition</item>
+            <item >Returns</item>
+            <item >Summary</item>
+        </string-array>
+        <string-array name="gidArray">
+            <item >New Supplier</item>
+            <item >New Category</item>
+            <item >New Item</item>
+        </string-array>
+    </resources>
