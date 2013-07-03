@@ -26,5 +26,22 @@
     <string name="quantity_delivered">Quatinty Delivered</string>
     <string name="expiry_date">Expiry Date</string>
     <string name="delivery_note_number">Delivery Note Number</string>
+    <string name="title_activity_internal_requisition">InternalRequisition</string>
+    <string name="title_activity_internal_requisition_details">InternalRequisitionDetails</string>
+    <string name="reason">Reason</string>
+    <string name="requester">Requester</string>
+    <string name="verify">Verify</string>
+    <string name="department">Department</string>
+    <string name="quantity_requested">Quantity Requested</string>
+    <string name="quantity_issued">Quantity Issued</string>
+    <string name="title_activity_existing_request">ExistingRequest</string>
+    <string name="title_activity_request">Request</string>
+    <string name="existing_request">Existing Request</string>
+    <string name="new_request">New Request</string>
+    <string name="search">Search</string>
+    <string name="title_activity_returns">Returns</string>
+    <string name="title_activity_summary">Summary</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
 
 </resources>

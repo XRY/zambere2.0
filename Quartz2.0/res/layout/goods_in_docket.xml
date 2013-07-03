@@ -25,7 +25,7 @@
                 android:text="@string/delivery_note_number" />
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/delNoteET"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -102,7 +102,7 @@
                android:text="@string/quantity_delivered" />
 
            <EditText
-               android:id="@+id/editText2"
+               android:id="@+id/qtyDeliveredET"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:ems="10" 
@@ -122,7 +122,7 @@
                 android:text="@string/expiry_date" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/expiryDateET"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -146,17 +146,18 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/savebtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/save" />
+        android:text="@string/save"
+        android:onClick="saveEntries" />
 
-    <ListView
+    <!--  <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/gidArray" >
-    </ListView>
+    </ListView>-->
 
 </LinearLayout>
 </ScrollView>
