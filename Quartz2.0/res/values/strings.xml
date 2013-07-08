@@ -43,5 +43,8 @@
     <string name="title_activity_summary">Summary</string>
     <string name="from">From</string>
     <string name="to">To</string>
+    <string name="title_activity_return_details">ReturnDetails</string>
+    <string name="title_activity_summary_details">SummaryDetails</string>
+    <string name="title_activity_date_picker_fragment">DatePickerFragment</string>
 
 </resources>

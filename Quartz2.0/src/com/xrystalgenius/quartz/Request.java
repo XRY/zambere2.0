@@ -27,12 +27,12 @@ public class Request extends Activity {
 	}
 	
 	public void addOnExistingRequest(View view){
-		/*Intent existIntent = new Intent(Request.this, ExistingRequest.class);
-		startActivity(existIntent);*/
-		Intent existIntent = new Intent(Request.this, InternalRequisitionDetails.class);
+		Intent existIntent = new Intent(Request.this, ExistingRequest.class);
+		startActivity(existIntent);
+		/*Intent existIntent = new Intent(Request.this, InternalRequisitionDetails.class);
 		//existIntent.putExtra("com.xrystalgenius.personIrn", "person irn number");
 		//At2: Retrieve from next Activity
-		startActivity(existIntent);
+		startActivity(existIntent);*/
 	}
 
 }

@@ -46,7 +46,7 @@ public final class FeedReaderHelper {
 		public static final String COLUMN_NAME_TABLE_Id = "returnsid";
 		public static final String COLUMN_NAME_RETURNED_BY = "returnedby";
 		public static final String COLUMN_NAME_ITEM_ID = "itemid";
-		public static final String COLUMN_NAME_QUANTITY = "quantity";
+		public static final String COLUMN_NAME_QUANTITY = "qtyreturned";
 		public static final String COLUMN_NAME_DATE = "date";
 
 	}
@@ -75,5 +75,18 @@ public final class FeedReaderHelper {
 		public static final String COLUMN_NAME_QUANTITY_TYPE = "quantitytype";
 		public static final String COLUMN_NAME_DEPT_ID = "deptid";
 
+	}
+	
+	public static abstract class StockCardTable implements BaseColumns {
+		public static final String TABLE_NAME = "stockcard";
+		public static final String COLUMN_NAME_TABLE_ID = "stcid";
+		public static final String COLUMN_NAME_ITEM_ID = "itemid";
+		public static final String COLUMN_NAME_QUANTITY = "type";
+		public static final String COLUMN_NAME_TYPE = "quantity";
+		public static final String COLUMN_NAME_DATE = "date";
+		public static final String COLUMN_NAME_RUNNING_TOTAL = "runningtotal";
+		public static final String COLUMN_NAME_SUPPLIER_ID = "supplierid";
+		public static final String COLUMN_NAME_REQUESTER = "requester";
+		
 	}
 }

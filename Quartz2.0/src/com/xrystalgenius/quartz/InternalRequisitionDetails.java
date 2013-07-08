@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.xrystalgenius.quartz.FeedReaderHelper.DepartmentTable;
+import com.xrystalgenius.quartz.FeedReaderHelper.InternalRequisitionDetailsTable;
 import com.xrystalgenius.quartz.FeedReaderHelper.ItemTable;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -18,12 +20,13 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class InternalRequisitionDetails extends Activity{
 	private EditText qtyRequestedEt, qtyIssuedEt;
 	private Spinner catSpinner, itSpinner;
-	private int itemid, quantityRequested, quantityIssued;
-	
+	private int itemid, quantityRequested, quantityIssued, personIrn;
+	private String qtyRequested, qtyIssued;
 	
 	private FeedReadHelper dbHelper;
 	private SQLiteDatabase db;
@@ -32,7 +35,13 @@ public class InternalRequisitionDetails extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.internal_requisition_details);
-
+		
+		qtyRequestedEt = (EditText)findViewById(R.id.irndQtyRequestedEt2);
+		qtyIssuedEt = (EditText)findViewById(R.id.irndQtyIssuedEt2);
+		
+		Bundle extras = getIntent().getExtras();
+		personIrn = extras.getInt("requesterirn");
+		
 		// addItemsOnCatSpinner();
 		addItemsOnCatSpinner(getDepartmentNames());
 
@@ -93,8 +102,7 @@ public class InternalRequisitionDetails extends Activity{
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				// TODO Auto-generated method stub
-				
+				itemid = arg2 + 1;
 			}
 
 			@Override
@@ -104,35 +112,6 @@ public class InternalRequisitionDetails extends Activity{
 			}
 		});
 	}
-
-/*	@Override
-	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3) {
-		
-		Log.v("Something selected", arg2 + " weweweweweweeeeeeeeeewe?");
-		
-		if (arg0 == catSpinner) {
-
-			Log.v(arg0.toString(), arg2 + " sup?");
-
-			addItemsOnItSpinner(getItemNames(arg2));
-
-		}
-		
-		else if(arg0 == itSpinner){
-			
-		}
-
-	}*/
-
-	/*@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
-		Log.v("Playing is my hobby", "I like it");
-		if(arg0 == catSpinner){
-			Log.v("Playing is not my hobby", "I hate it");
-		}
-	}*/
 	
 	private List<String> getDepartmentNames() {
 		List<String> deptlist = new ArrayList<String>();
@@ -186,5 +165,35 @@ public class InternalRequisitionDetails extends Activity{
 		db.close();
 		// return data;
 		return list;
+	}
+	
+	public void saveIrnDetails(View view){
+		dbHelper = new FeedReadHelper(this);
+		db = dbHelper.getWritableDatabase();
+		try {
+			// department = departmentEt.getText().toString();
+			qtyRequested = qtyRequestedEt.getText().toString();
+			qtyIssued = qtyIssuedEt.getText().toString();
+			
+			quantityRequested = Integer.parseInt(qtyRequested);
+			quantityIssued = Integer.parseInt(qtyIssued);
+
+			ContentValues values = new ContentValues();
+			values.put(InternalRequisitionDetailsTable.COLUMN_NAME_IRN, personIrn);
+			values.put(InternalRequisitionDetailsTable.COLUMN_NAME_ITEM_ID, itemid);
+			values.put(InternalRequisitionDetailsTable.COLUMN_NAME_QUANTITY_REQUESTED, quantityRequested);
+			values.put(InternalRequisitionDetailsTable.COLUMN_NAME_QUANTITY_ISSUED, quantityIssued);
+
+			Log.d("Insert Irn ", "Inserting irn values....");
+
+			db.insert(InternalRequisitionDetailsTable.TABLE_NAME, null, values);
+		} catch (Exception ex) {
+
+		} finally {
+			db.close();
+		}
+		
+		Toast.makeText(getApplicationContext(),"Entries saved successfully",
+				 Toast.LENGTH_LONG).show();
 	}
 }

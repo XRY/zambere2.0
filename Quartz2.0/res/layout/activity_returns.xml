@@ -1,48 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true" >
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="" >
-
-                <requestFocus />
-            </AutoCompleteTextView>
-
-            <Button
-                android:id="@+id/returnsSearchBtn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/search" />
-        </TableRow>
-
-        <ListView
-            android:id="@android:id/list"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/returnsSearchEt1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" >
-        </ListView>
+            android:ems="10"
+            android:inputType="text" >
+
+            <requestFocus />
+        </EditText>
 
         <Button
-            android:id="@+id/returnsSaveBtn1"
-            android:layout_width="291dp"
+            android:id="@+id/returnsSearchBtn1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/save" />
-    </LinearLayout>
+            android:text="@string/search" />
 
-</ScrollView>
+    </TableRow>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+    </ListView>
+
+</LinearLayout>

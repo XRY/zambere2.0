@@ -71,6 +71,18 @@
             android:name="com.xrystalgenius.quartz.Summary"
             android:label="@string/title_activity_summary" >
         </activity>
+        <activity
+            android:name="com.xrystalgenius.quartz.ReturnDetails"
+            android:label="@string/title_activity_return_details" >
+        </activity>
+        <activity
+            android:name="com.xrystalgenius.quartz.SummaryDetails"
+            android:label="@string/title_activity_summary_details" >
+        </activity>
+        <activity
+            android:name="com.xrystalgenius.quartz.DatePickerFragment"
+            android:label="@string/title_activity_date_picker_fragment" >
+        </activity>
     </application>
 
 </manifest>
